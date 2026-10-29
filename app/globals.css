@@ -1462,7 +1462,7 @@ a:focus {
 }
 
 .ta-lesson details[open] summary::after {
-  content: "\2013";
+  content: "-";
 }
 
 .ta-lesson details ul {
