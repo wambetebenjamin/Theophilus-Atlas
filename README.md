@@ -94,6 +94,10 @@ revenue, enrolment, giving, satisfaction and programme outcomes.
 - Photographs are local files in `public/images/`; `images.pexels.com` is allowed in
   `next.config.ts` for future editorial images
 - Set `AUTH_SECRET` in the Vercel project before the saved shelf signs anyone in
+- Production build: https://theophilus-atlas.vercel.app, deployed to region `cdg1`
+- Environment already set on the project: `AUTH_SECRET`, `NEXT_PUBLIC_SITE_URL`,
+  `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_WHATSAPP_DISPLAY`, `NEXT_PUBLIC_LOCALES`
+- Pull request: https://github.com/wambetebenjamin/Theophilus-Atlas/pull/1
 
 ## Credits
 
