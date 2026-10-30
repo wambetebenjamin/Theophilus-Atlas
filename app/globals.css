@@ -447,9 +447,11 @@ a:focus {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 22px;
+  /* The promo band is pulled 70px up over the hero, so the cue sits above
+     that overlap instead of painting over the band headings. */
+  bottom: 96px;
   text-align: center;
-  z-index: 2;
+  z-index: 1;
 }
 
 .ta-hero-scroll a {
@@ -483,6 +485,20 @@ a:focus {
 @media (prefers-reduced-motion: reduce) {
   .ta-hero-scroll a {
     animation: none;
+  }
+}
+
+/* On phones and small tablets the band reaches the hero actions, so the cue
+   steps aside and the page simply scrolls. */
+@media (max-width: 991px) {
+  .ta-hero-scroll {
+    display: none;
+  }
+
+  /* One heading wraps to two lines at this width, so give all three the same
+     height and keep the paragraphs on a shared baseline. */
+  .ta-promo .brand-content h2 {
+    min-height: 2.6em;
   }
 }
 
