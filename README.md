@@ -70,6 +70,7 @@ tour setting or a deploy contract that has drifted.
 | `AUTH_URL` | Set automatically on Vercel |
 | `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`, `RECAPTCHA_SECRET_KEY` | Optional reCAPTCHA. Without a key the form falls back to a human confirmation checkbox |
 | `NEXT_PUBLIC_LOCALES` | `en,sw,fr` |
+| `CONTACT_WEBHOOK_URL` | Optional. Where a contact message is posted. Without it the form hands the note to WhatsApp and says so |
 
 ## Brand and voice
 

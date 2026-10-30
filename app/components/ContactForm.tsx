@@ -17,6 +17,7 @@ export function ContactForm() {
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [waLink, setWaLink] = useState("");
+  const [delivered, setDelivered] = useState(false);
   const [token, setToken] = useState<string | null>(null);
   const [provider, setProvider] = useState<CaptchaProvider>("local");
 
@@ -51,6 +52,7 @@ export function ContactForm() {
         errors?: Record<string, string>;
         error?: string;
         waLink?: string;
+        delivered?: boolean;
       };
       if (!response.ok || !result.ok) {
         setErrors(result.errors ?? { form: result.error ?? "Could not send the message." });
@@ -58,6 +60,7 @@ export function ContactForm() {
         return;
       }
       setWaLink(result.waLink ?? "");
+      setDelivered(result.delivered === true);
       setState("done");
       form.reset();
     } catch {
@@ -69,11 +72,16 @@ export function ContactForm() {
   if (state === "done") {
     return (
       <div className="ta-success" role="status">
-        <p style={{ margin: 0 }}>{t("contact.success")}</p>
+        <p style={{ margin: 0 }}>{delivered ? t("contact.success") : t("contact.notStored")}</p>
         {waLink ? (
           <p style={{ margin: "12px 0 0" }}>
-            <a className="ta-btn" href={waLink} target="_blank" rel="noopener noreferrer">
-              {t("common.whatsapp")}
+            <a
+              className={delivered ? "ta-btn" : "ta-btn ta-btn--solid"}
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {delivered ? t("common.whatsapp") : t("contact.sendOnWhatsApp")}
             </a>
           </p>
         ) : null}
