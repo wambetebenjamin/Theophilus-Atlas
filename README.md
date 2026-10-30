@@ -99,6 +99,8 @@ revenue, enrolment, giving, satisfaction and programme outcomes.
 - Environment already set on the project: `AUTH_SECRET`, `NEXT_PUBLIC_SITE_URL`,
   `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_WHATSAPP_DISPLAY`, `NEXT_PUBLIC_LOCALES`
 - Pull request: https://github.com/wambetebenjamin/Theophilus-Atlas/pull/1
+- Follow up fixes merged in pull requests 2 (honest contact confirmation, 24px tap targets)
+  and 3 (hero scroll cue lifted clear of the promo band)
 
 ## Credits
 
