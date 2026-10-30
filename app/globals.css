@@ -457,7 +457,17 @@ a:focus {
   font-size: 34px;
   line-height: 1;
   display: inline-block;
+  position: relative;
   animation: ta-bob 2.4s ease-in-out infinite;
+}
+
+.ta-hero-scroll a::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  bottom: -4px;
+  left: -6px;
 }
 
 @keyframes ta-bob {
@@ -561,6 +571,21 @@ a:focus {
 .ta-link-arrow:hover,
 .ta-link-arrow:focus {
   color: var(--ta-gold-soft);
+}
+
+/* Invisible padding keeps the small arrow links at the same size on screen
+   while giving a thumb something to land on. No layout shift. */
+.ta-link-arrow {
+  position: relative;
+}
+
+.ta-link-arrow::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: -4px;
+  bottom: -7px;
+  left: -4px;
 }
 
 /*--- section furniture --------------------------------------------*/

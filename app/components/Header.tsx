@@ -106,9 +106,7 @@ export function Header() {
               <span className="ta-mark" aria-label={site.mark}>
                 {site.mark}
               </span>
-              <div className="ta-lang-wrap">
-                <LanguageSwitcher />
-              </div>
+              <LanguageSwitcher />
               <button
                 ref={triggerRef}
                 type="button"
